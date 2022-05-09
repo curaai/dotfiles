@@ -23,6 +23,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 # 3. zsh autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 # 4. fzf-tab
-git clone https://github.com/Aloxaf/fzf-tab ZSH_CUSTOM/plugins/fzf-tab
+git clone https://github.com/Aloxaf/fzf-tab $ZSH_CUSTOM/plugins/fzf-tab
 
 
