@@ -1,2 +1,5 @@
 [credential]
 	helper = osxkeychain
+[user]
+	name = curaai
+	email = curaai00@gmail.com
