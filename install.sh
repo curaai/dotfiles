@@ -1,5 +1,9 @@
 # Install utils 
-brew install exa fzf
+brew install exa fzf bat
+
+# Install font "fira code" 
+brew tap homebrew/cask-fonts
+brew install --cask font-fira-code
 
 # fzf setting
 $(brew --prefix)/opt/fzf/install

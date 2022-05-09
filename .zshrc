@@ -130,3 +130,4 @@ alias ltttt=' ls --tree -D -L 5 -I ${TREE_IGNORE}'
 alias rr='rm -rf'
 
 [ -f ~/dotfiles/.fzf.zsh ] && source ~/dotfiles/.fzf.zsh
+[ -f ~/dotfiles/.zprofile ] && source ~/dotfiles/.zprofile
