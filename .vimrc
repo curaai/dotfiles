@@ -1,29 +1,36 @@
+" Vim 기본 디렉토리 설정
+set runtimepath^=~/.dotfiles/.vim
+set runtimepath+=~/.dotfiles/.vim/after
+let &packpath = &runtimepath
+
 " set the runtime path to include Vundle and initialize
 syntax on
 
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+" Vim-Plug 자동 설치
+if empty(glob('~/.dotfiles/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.dotfiles/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin('~/.vim/plugged')
+" Vim-Plug 시작
+call plug#begin('~/.dotfiles/.vim/plugged')
 
-" color scheme
+" 플러그인 목록
 Plug 'drewtempelmeyer/palenight.vim'
-" filetree 
 Plug 'preservim/nerdtree'
-" screen bottom status line
 Plug 'vim-airline/vim-airline'
-" show cur document changes based on vim
 Plug 'airblade/vim-gitgutter'
 
-
+" Vim-Plug 종료
 call plug#end()
 
 " Plug palenight
 colorscheme palenight
 let g:airline_theme = "palenight"
+
+" viminfo 경로 $home에서 가리기
+" set viminfo+=n~/.dotfiles/.vim/.viminfo
 
 " Tag List 환경설정
 filetype on                                 "vim filetype on

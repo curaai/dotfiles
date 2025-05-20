@@ -1,32 +1,34 @@
-# Install utils 
-brew install exa fzf bat
+#!/bin/bash
 
-# Install font "fira code" 
-brew tap homebrew/cask-fonts
-brew install --cask font-fira-code
+ZSH="$HOME/.dotfiles/.oh-my-zsh"
+ZSH_CUSTOM="$ZSH/custom"
 
-# fzf setting
-$(brew --prefix)/opt/fzf/install
+if [ ! -d "$ZSH_CUSTOM" ]; then
+  mkdir -p $ZSH_CUSTOM
+fi
 
-# Iterm2 theme 
-curl https://raw.githubusercontent.com/sindresorhus/iterm2-snazzy/main/Snazzy.itermcolors > ~/dotfiles/Snazzy.itermcolors
+path="$ZSH_CUSTOM/plugins/zsh-autosuggestions"
+if [ ! -d "$path" ]; then
+  git clone https://github.com/zsh-users/zsh-autosuggestions $path
+fi
 
-# Install oh my zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+path="$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
+if [ ! -d "$path" ]; then
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting $path
+fi
 
-ZSH_CUSTOM=$ZSH/custom
+path="$ZSH_CUSTOM/plugins/fzf-tab"
+if [ ! -d "$path" ]; then
+  git clone https://github.com/Aloxaf/fzf-tab $path
+fi
 
-# Install powerlevel10k
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+path="$ZSH_CUSTOM/plugins/zsh-completions"
+if [ ! -d "$path" ]; then
+  git clone https://github.com/zsh-users/zsh-completions $path
+fi
 
-#### Install zsh plugins ####
-# 1. zsh completion
-git clone https://github.com/zsh-users/zsh-completions $ZSH_CUSTOM/plugins/zsh-completions
-# 2. zsh syntax highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-# 3. zsh autosuggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-# 4. fzf-tab
-git clone https://github.com/Aloxaf/fzf-tab $ZSH_CUSTOM/plugins/fzf-tab
-
+path="$ZSH_CUSTOM/themes/powerlevel10k"
+if [ ! -d "$path" ]; then
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $path
+fi
 

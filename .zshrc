@@ -11,7 +11,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/dotfiles/.oh-my-zsh"
+export ZSH="$HOME/.dotfiles/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -70,7 +70,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+export ZSH_CUSTOM=$ZSH/custom
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -109,11 +109,12 @@ export EDITOR="vim"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-autoload -U compinit && compinit
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/dotfiles/.p10k.zsh ]] || source ~/dotfiles/.p10k.zsh
+[[ ! -f ~/.dotfiles/.p10k.zsh ]] || source ~/.dotfiles/.p10k.zsh
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
+HISTFILE=$HOME/.local/zsh/.zsh_history
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 
@@ -129,5 +130,5 @@ alias ltttt=' ls --tree -D -L 5 -I ${TREE_IGNORE}'
 
 alias rr='rm -rf'
 
-[ -f ~/dotfiles/.fzf.zsh ] && source ~/dotfiles/.fzf.zsh
-[ -f ~/dotfiles/.zprofile ] && source ~/dotfiles/.zprofile
+[ -f ~/dotfiles/.fzf.zsh ] && source ~/.dotfiles/.fzf.zsh
+[ -f ~/dotfiles/.zprofile ] && source ~/.dotfiles/.zprofile
